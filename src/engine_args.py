@@ -93,6 +93,8 @@ DEFAULT_ARGS = {
     "disable_logprobs_during_spec_decoding": os.getenv('DISABLE_LOGPROBS_DURING_SPEC_DECODING', None),
     "otlp_traces_endpoint": os.getenv('OTLP_TRACES_ENDPOINT', None),
     "use_v2_block_manager": os.getenv('USE_V2_BLOCK_MANAGER', 'true'),
+    "mm_processor_cache_gb": int(os.getenv('MM_PROCESSOR_CACHE_GB', 2)),  # Multimodal processor cache in GB
+    "logits_processors": os.getenv('LOGITS_PROCESSORS', None),  # e.g., vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor
 }
 limit_mm_env = os.getenv('LIMIT_MM_PER_PROMPT')
 if limit_mm_env is not None:
